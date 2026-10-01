@@ -1,0 +1,2 @@
+# The copy of the RKI repository page must stay byte-identical (sizes are recorded in repository.json).
+data/quelle/** -text

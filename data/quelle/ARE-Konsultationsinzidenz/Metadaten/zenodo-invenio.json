@@ -1,0 +1,310 @@
+{
+  "title": "ARE-Konsultationsinzidenz",
+  "description": "<p>Im Datensatz \"ARE-Konsultationsinzidenz\" des Robert Koch-Instituts werden wöchentliche Inzidenzen von ambulanten Konsultationen mit akuter respiratorischer Erkrankung (ARE) in Deutschland bereitgestellt. Die Daten stammen vom ARE-Praxis-Sentinel des RKI. Hier werden aus Sentinelpraxen Daten von gesetzlich versicherten Patientinnen und Patienten mit einer akuten Atemwegserkrankung entweder einzelfallbasiert anhand von ICD-10-Diagnosecodes mit dem SEED/ARE-Modul oder aggregiert nach Altersgruppen über eine Online-Eingabemaske erfasst. Die ARE-Konsultationsinzidenz wird pro 100.000 Einwohner und nach Altersgruppen und Bundesländern ausgewiesen. Ziel ist es, die Krankheitslast und den saisonalen Verlauf von Atemwegserkrankungen wie Influenza, COVID-19 und RSV-Erkrankungen zu bewerten sowie epidemiologische Entwicklungen frühzeitig zu erkennen</p>",
+  "resource_type": {
+    "id": "dataset"
+  },
+  "publication_date": "2026-10-01",
+  "creators": [
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Goerlitz",
+        "given_name": "Luise",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0009-0004-3024-6797"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Tolksdorf",
+        "given_name": "Kristin",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-8712-6399"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Prahm",
+        "given_name": "Kerstin",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0009-0005-7038-4315"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Preuß",
+        "given_name": "Ute"
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Krupka",
+        "given_name": "Simon",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0003-1941-1734"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Wunderlich",
+        "given_name": "Juliane",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-5818-5488"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Gvaladze",
+        "given_name": "Tamar",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0009-0007-4442-9633"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Buchholz",
+        "given_name": "Udo",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0001-6597-3995"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Haas",
+        "given_name": "Walter",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0003-3413-1431"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Buda",
+        "given_name": "Silke",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0003-3448-3357"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    }
+  ],
+  "contributors": [],
+  "publisher": "Zenodo",
+  "version": "2026-10-01",
+  "dates": [
+    {
+      "date": "2026-09-29T09:51:13+02:00",
+      "type": {
+        "id": "created"
+      },
+      "description": "Date when the dataset was created"
+    }
+  ],
+  "languages": [
+    {
+      "id": "deu"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "relation_type": {
+        "id": "issupplementto"
+      },
+      "identifier": "https://github.com/robert-koch-institut/ARE-Konsultationsinzidenz",
+      "resource_type": {
+        "id": "dataset"
+      }
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "Akute Atemwegserkrankungen"
+    },
+    {
+      "subject": "ARE"
+    },
+    {
+      "subject": "Primary Care"
+    },
+    {
+      "subject": "Erstversorgung"
+    },
+    {
+      "subject": "Niedergelassene Ärzte"
+    },
+    {
+      "subject": "Konsultationsinzidenz"
+    },
+    {
+      "subject": "Patient Admission"
+    },
+    {
+      "subject": "Patientenaufnahme"
+    },
+    {
+      "subject": "Respiratory Tract Infections"
+    },
+    {
+      "subject": "Atemwegsinfektionen"
+    },
+    {
+      "subject": "Syndromische Surveillance"
+    },
+    {
+      "subject": "Sentinel Surveillance"
+    },
+    {
+      "subject": "Ambulante Behandlung"
+    },
+    {
+      "subject": "Ambulatory Care"
+    },
+    {
+      "subject": "SEEDARE"
+    },
+    {
+      "subject": "Pandemic Preparedness"
+    },
+    {
+      "subject": "Arbeitsgemeinschaft Influenza"
+    },
+    {
+      "subject": "Deutschland"
+    },
+    {
+      "subject": "Germany"
+    },
+    {
+      "subject": "RKI"
+    },
+    {
+      "subject": "Open Data"
+    },
+    {
+      "subject": "Gesundheitsberichterstattung"
+    },
+    {
+      "subject": "Epidemiologie"
+    },
+    {
+      "subject": "Public health surveillance"
+    },
+    {
+      "subject": "Epidemiology"
+    }
+  ],
+  "custom_fields": {
+    "legacy:communities": [
+      "robertkochinstitut"
+    ]
+  }
+}

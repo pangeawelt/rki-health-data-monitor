@@ -1,0 +1,99 @@
+{
+  "repository": "robert-koch-institut/ARE-Konsultationsinzidenz",
+  "url": "https://github.com/robert-koch-institut/ARE-Konsultationsinzidenz",
+  "description": "Im Datensatz \"ARE-Konsultationsinzidenz\" des Robert Koch-Instituts werden wöchentliche Inzidenzen von ambulanten Konsultationen mit akuter respiratorischer Erkrankung (ARE) in Deutschland bereitgestellt. Die Daten stammen vom ARE-Praxis-Sentinel des RKI. Hier werden aus Sentinelpraxen Daten von gesetzlich versicherten Patientinnen und Patienten ...",
+  "homepage": "https://influenza.rki.de/",
+  "topics": [
+    "akute-atemwegserkrankungen",
+    "ambulante-behandlung",
+    "ambulatory-care",
+    "arbeitsgemeinschaft-influenza",
+    "are",
+    "atemwegsinfektionen",
+    "deutschland",
+    "erstversorgung",
+    "germany",
+    "konsultationsinzidenz",
+    "niedergelassene-aerzte",
+    "pandemic-preparedness",
+    "patient-admission",
+    "patientenaufnahme",
+    "primary-care",
+    "respiratory-tract-infections",
+    "rki",
+    "seedare",
+    "sentinel-surveillance",
+    "syndromische-surveillance"
+  ],
+  "license": {
+    "name": "Creative Commons Attribution 4.0 International",
+    "spdx_id": "CC-BY-4.0"
+  },
+  "default_branch": "main",
+  "created_at": "2023-09-13T07:28:18Z",
+  "pushed_at": "2026-10-01T07:03:42Z",
+  "stars": 7,
+  "forks": 2,
+  "latest_commit": {
+    "sha": "576ab41",
+    "date": "2026-10-01T07:02:13Z",
+    "message": "Update 2026-10-01"
+  },
+  "retrieved_at": "2026-10-01T10:55:22+00:00",
+  "entries": [
+    {
+      "name": ".github",
+      "type": "dir",
+      "size": null,
+      "copied": false
+    },
+    {
+      "name": "Metadaten",
+      "type": "dir",
+      "size": null,
+      "copied": true
+    },
+    {
+      "name": "[Dokumentation]_ARE-Konsultationsinzidenz.pdf",
+      "type": "file",
+      "size": 93924,
+      "copied": true
+    },
+    {
+      "name": "ARE-Konsultationsinzidenz.tsv",
+      "type": "file",
+      "size": 1000524,
+      "copied": false
+    },
+    {
+      "name": "citation.cff",
+      "type": "file",
+      "size": 3184,
+      "copied": true
+    },
+    {
+      "name": "datapackage.json",
+      "type": "file",
+      "size": 775,
+      "copied": true
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "size": 18650,
+      "copied": true
+    },
+    {
+      "name": "LIZENZ",
+      "type": "file",
+      "size": 22260,
+      "copied": true
+    },
+    {
+      "name": "Readme.md",
+      "type": "file",
+      "size": 17909,
+      "copied": true
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "resource": {
+    "classification": {
+      "type": "Dataset"
+    },
+    "descriptions": [
+      {
+        "language": "DE (German)",
+        "text": "Im Datensatz \"ARE-Konsultationsinzidenz\" des Robert Koch-Instituts werden wöchentliche Inzidenzen von ambulanten Konsultationen mit akuter respiratorischer Erkrankung (ARE) in Deutschland bereitgestellt. Die Daten stammen vom ARE-Praxis-Sentinel des RKI. Hier werden aus Sentinelpraxen Daten von gesetzlich versicherten Patientinnen und Patienten mit einer akuten Atemwegserkrankung entweder einzelfallbasiert anhand von ICD-10-Diagnosecodes mit dem SEED/ARE-Modul oder aggregiert nach Altersgruppen über eine Online-Eingabemaske erfasst. Die ARE-Konsultationsinzidenz wird pro 100.000 Einwohner und nach Altersgruppen und Bundesländern ausgewiesen. Ziel ist es, die Krankheitslast und den saisonalen Verlauf von Atemwegserkrankungen wie Influenza, COVID-19 und RSV-Erkrankungen zu bewerten sowie epidemiologische Entwicklungen frühzeitig zu erkennen"
+      }
+    ],
+    "titles": [
+      {
+        "language": "DE (German)",
+        "text": "ARE-Konsultationsinzidenz"
+      }
+    ],
+    "ids": [
+      {
+        "identifier": "10.5281/zenodo.23076835",
+        "typeGeneral": "Dataset",
+        "relationType": "A references B",
+        "scheme": "DOI"
+      },
+      {
+        "identifier": "https://github.com/robert-koch-institut/ARE-Konsultationsinzidenz",
+        "typeGeneral": "Dataset",
+        "relationType": "A references B",
+        "scheme": "URL"
+      }
+    ],
+    "provenance": {
+      "dataSource": "Automatically uploaded: Other"
+    },
+    "keywords": [
+      {
+        "label": "Akute Atemwegserkrankungen"
+      },
+      {
+        "label": "ARE"
+      },
+      {
+        "label": "Primary Care"
+      },
+      {
+        "label": "Erstversorgung"
+      },
+      {
+        "label": "Niedergelassene Ärzte"
+      },
+      {
+        "label": "Konsultationsinzidenz"
+      },
+      {
+        "label": "Patient Admission"
+      },
+      {
+        "label": "Patientenaufnahme"
+      },
+      {
+        "label": "Respiratory Tract Infections",
+        "code": "http://id.nlm.nih.gov/mesh/D012141"
+      },
+      {
+        "label": "Atemwegsinfektionen",
+        "code": "http://id.nlm.nih.gov/mesh/D012141"
+      },
+      {
+        "label": "Syndromische Surveillance"
+      },
+      {
+        "label": "Sentinel Surveillance"
+      },
+      {
+        "label": "Ambulante Behandlung",
+        "code": "http://id.nlm.nih.gov/mesh/D000553"
+      },
+      {
+        "label": "Ambulatory Care",
+        "code": "http://id.nlm.nih.gov/mesh/D000553"
+      },
+      {
+        "label": "SEEDARE"
+      },
+      {
+        "label": "Pandemic Preparedness"
+      },
+      {
+        "label": "Arbeitsgemeinschaft Influenza"
+      },
+      {
+        "label": "Deutschland",
+        "code": "http://id.nlm.nih.gov/mesh/D005858"
+      },
+      {
+        "label": "Germany",
+        "code": "http://id.nlm.nih.gov/mesh/D005858"
+      },
+      {
+        "label": "RKI"
+      },
+      {
+        "label": "Open Data"
+      },
+      {
+        "label": "Gesundheitsberichterstattung",
+        "code": "http://id.nlm.nih.gov/mesh/D062486"
+      },
+      {
+        "label": "Epidemiologie",
+        "code": "http://id.nlm.nih.gov/mesh/D004813"
+      },
+      {
+        "label": "Public health surveillance",
+        "code": "http://id.nlm.nih.gov/mesh/D062486"
+      },
+      {
+        "label": "Epidemiology",
+        "code": "http://id.nlm.nih.gov/mesh/D004813"
+      }
+    ],
+    "languages": [
+      "DE (German)"
+    ],
+    "nonStudyDetails": {
+      "useRights": {
+        "confirmations": {
+          "authority": true,
+          "irrevocability": true,
+          "terms": true,
+          "supportByLicensing": true
+        },
+        "label": "CC BY 4.0 (Creative Commons Attribution 4.0 International)"
+      },
+      "version": "2026-10-01"
+    },
+    "webpage": "https://robert-koch-institut.github.io/ARE-Konsultationsinzidenz",
+    "contributors": [
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Luise",
+          "familyName": "Goerlitz",
+          "identifiers": [
+            {
+              "identifier": "0009-0004-3024-6797",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Kristin",
+          "familyName": "Tolksdorf",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-8712-6399",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Kerstin",
+          "familyName": "Prahm",
+          "identifiers": [
+            {
+              "identifier": "0009-0005-7038-4315",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Ute",
+          "familyName": "Preuß"
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Simon",
+          "familyName": "Krupka",
+          "identifiers": [
+            {
+              "identifier": "0000-0003-1941-1734",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Juliane",
+          "familyName": "Wunderlich",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-5818-5488",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Tamar",
+          "familyName": "Gvaladze",
+          "identifiers": [
+            {
+              "identifier": "0009-0007-4442-9633",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Udo",
+          "familyName": "Buchholz",
+          "identifiers": [
+            {
+              "identifier": "0000-0001-6597-3995",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Walter",
+          "familyName": "Haas",
+          "identifiers": [
+            {
+              "identifier": "0000-0003-3413-1431",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "nameType": "Personal",
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut",
+            "identifiers": [
+              {
+                "identifier": "01k5qnb77",
+                "scheme": "ROR"
+              }
+            ]
+          }
+        ],
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Silke",
+          "familyName": "Buda",
+          "identifiers": [
+            {
+              "identifier": "0000-0003-3448-3357",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      }
+    ],
+    "identifier": "2636"
+  }
+}
