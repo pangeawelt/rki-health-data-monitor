@@ -3,6 +3,7 @@
 The chart is the dashboard's own Plotly figure rendered to an image, so nothing is drawn by hand.
 """
 import io
+import logging
 from xml.sax.saxutils import escape
 
 from reportlab.lib import colors
@@ -16,6 +17,8 @@ from src.core.config import settings
 from src.services.export.emphasis import to_reportlab
 from src.services.export.figure import PNG_HEIGHT, PNG_WIDTH, figure_png
 from src.services.export.model import ChartExport, Kpi, format_de
+
+logger = logging.getLogger(__name__)
 
 GRID = colors.HexColor("#dddddd")
 MUTED = colors.HexColor("#555555")
@@ -149,6 +152,19 @@ def _footer(chart: ChartExport):
     return draw
 
 
+def _chart_flowable(chart: ChartExport, width: float, note_style: ParagraphStyle):
+    """The dashboard chart as an image; a short note instead if the image engine is unavailable on this system."""
+    try:
+        return Image(io.BytesIO(figure_png(chart)), width=width, height=width * PNG_HEIGHT / PNG_WIDTH)
+    except Exception:  # Kaleido needs a browser engine that some hosts do not provide
+        logger.exception("Chart image could not be rendered; creating the PDF without it")
+        return Paragraph(
+            "Das Diagramm konnte auf diesem System nicht als Bild erzeugt werden. "
+            "Kennzahlen und Datentabelle sind vollständig.",
+            note_style,
+        )
+
+
 def build_pdf(chart: ChartExport) -> bytes:
     buffer = io.BytesIO()
     doc = SimpleDocTemplate(
@@ -182,7 +198,7 @@ def build_pdf(chart: ChartExport) -> bytes:
         story += [Paragraph(escape(group.title.upper()), group_style), _kpi_table(group.items, doc.width), Spacer(1, 6)]
     story += [
         Spacer(1, 4),
-        Image(io.BytesIO(figure_png(chart)), width=doc.width, height=doc.width * PNG_HEIGHT / PNG_WIDTH),
+        _chart_flowable(chart, doc.width, note),
     ]
     if chart.notes:
         story += [Paragraph("Hinweise zur Datenverfügbarkeit", heading)]

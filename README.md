@@ -17,7 +17,7 @@
 ![License](https://img.shields.io/badge/Lizenz-MIT-green)
 ![Data](https://img.shields.io/badge/Daten-RKI%20%7C%20CC%20BY%204.0-blue)
 
-[Highlights](#highlights) | [Schnellstart](#schnellstart) | [Architektur](#architektur) | [REST API](#rest-api) | [Tests](#tests) | [Datenquelle und Lizenz](#datenquelle-und-lizenz)
+[Highlights](#highlights) | [Schnellstart](#schnellstart) | [Online bereitstellen](#online-bereitstellen) | [Architektur](#architektur) | [REST API](#rest-api) | [Tests](#tests) | [Datenquelle und Lizenz](#datenquelle-und-lizenz)
 
 <br>
 
@@ -89,13 +89,24 @@ python -m uvicorn src.api.app:app --host 127.0.0.1 --port 8000
 streamlit run dashboard/app.py
 ```
 
-**4. Daten laden:** Im Dashboard links auf **"Aktuelle RKI-Daten laden"** klicken (Internet erforderlich) oder per Kommandozeile:
+**4. Daten:** Die Datenbank ist im Repository bewusst **leer**, es gibt keine vorbefüllten oder synthetischen Dashboard-Daten. Beim ersten Start einer leeren Datenbank lädt die API die aktuellen RKI-Daten automatisch (Internet erforderlich). Aktualisieren lässt sich jederzeit im Dashboard über **"Aktuelle RKI-Daten laden"** oder per Kommandozeile:
 
 ```powershell
 python -m src.cli refresh
 ```
 
-Die Datenbank ist im Repository bewusst **leer**. Es gibt keine vorbefüllten oder synthetischen Dashboard-Daten. Nach dem ersten Import liegen alle Daten in `data/rki_monitor.db`, das Dashboard arbeitet danach auch ohne Internet.
+Nach dem ersten Import liegen alle Daten in `data/rki_monitor.db`, das Dashboard arbeitet danach auch ohne Internet.
+
+## Online bereitstellen
+
+Das Dashboard läuft auch ohne eigenen Server, zum Beispiel auf der kostenlosen [Streamlit Community Cloud](https://share.streamlit.io):
+
+1. Auf share.streamlit.io mit GitHub anmelden und **Create app** wählen.
+2. Repository, Branch `main` und als Hauptdatei **`dashboard/app.py`** angeben.
+3. Unter **Advanced settings** die **Python-Version 3.12** wählen (3.11 und 3.10 funktionieren ebenfalls). Neuere Versionen wie 3.14 sind nicht geeignet, weil es dort für die festgelegten Paketversionen keine fertigen Pakete gibt.
+4. **Deploy** wählen. Secrets sind nicht nötig.
+
+Beim Start bringt das Dashboard die API im selben Prozess hoch (`EMBEDDED_API`) und lädt bei leerer Datenbank die aktuellen RKI-Daten (`AUTO_IMPORT_IF_EMPTY`). Der erste Aufruf dauert dadurch einige Sekunden. Der Speicher der kostenlosen Stufe ist flüchtig: Nach einem Neustart wird die Datenbank neu aufgebaut. Steht auf dem Host keine Browser-Engine für Kaleido bereit, entsteht das PDF ohne Diagrammbild (Kennzahlen und Datentabelle bleiben vollständig); der Excel-Export ist nicht betroffen.
 
 ## Bedienung
 
@@ -179,6 +190,8 @@ Werte stehen in `.env` (Vorlage: `.env.example`) und werden mit `pydantic-settin
 | `API_BASE_URL` | `http://127.0.0.1:8000` | Adresse der API für das Dashboard |
 | `RKI_DATA_URL` | RKI-Rohdatei auf GitHub | Quelle des Imports |
 | `SOURCE_COPY_DIR` | `./data/quelle/ARE-Konsultationsinzidenz` | Offline-Kopie der Quellseite |
+| `EMBEDDED_API` | `true` | Das Dashboard startet die API im eigenen Prozess, wenn unter `API_BASE_URL` (lokale Adresse) keine läuft |
+| `AUTO_IMPORT_IF_EMPTY` | `true` | Leere Datenbank beim API-Start automatisch aus der RKI-Quelle füllen |
 | `HTTP_TIMEOUT_SECONDS` | `60` | Timeout des Downloads |
 | `APP_AUTHOR` | *(leer)* | Optionaler Name in der Fußzeile des Dashboards |
 | `LOG_LEVEL` | `INFO` | Log-Stufe |

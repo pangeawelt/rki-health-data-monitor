@@ -13,11 +13,22 @@ if PROJECT_ROOT not in sys.path:
 import streamlit as st  # noqa: E402
 
 from dashboard.footer import render_footer  # noqa: E402
+from src.api.embedded import start_embedded_api  # noqa: E402
+from src.core.config import settings  # noqa: E402
 from dashboard.styles import apply_compact_layout  # noqa: E402
 from dashboard.views import about, glossary, overview, source  # noqa: E402
 
 st.set_page_config(page_title="RKI Health Data Monitor", page_icon="📊", layout="wide")
 apply_compact_layout()
+
+
+@st.cache_resource(show_spinner="Schnittstelle und Daten werden vorbereitet ...")
+def prepare_api() -> bool:
+    """Start the API inside this process when none runs yet (hosts that run only Streamlit)."""
+    return start_embedded_api(settings.api_base_url) if settings.embedded_api else False
+
+
+prepare_api()
 
 source_page = st.Page(source.render, title="RKI-Quelle", icon="📦", url_path="quelle")
 

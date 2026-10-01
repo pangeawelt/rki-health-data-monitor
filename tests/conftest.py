@@ -13,6 +13,7 @@ import pytest
 
 _TMP_DIR = tempfile.mkdtemp(prefix="rki-monitor-tests-")
 os.environ["DATABASE_PATH"] = str(Path(_TMP_DIR) / "test.db")
+os.environ["AUTO_IMPORT_IF_EMPTY"] = "false"
 atexit.register(shutil.rmtree, _TMP_DIR, ignore_errors=True)
 
 # Same structure as the real RKI file: Germany from 2012-W40, the states from 2022-W40, up to 2026-W39.

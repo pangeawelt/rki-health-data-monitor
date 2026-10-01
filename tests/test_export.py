@@ -20,6 +20,7 @@ from src.services.export.model import (
     trend_export,
     year_export,
 )
+from src.services.export import pdf as pdf_module
 from src.services.export.pdf import build_pdf
 
 NOW = datetime(2026, 10, 1, 12, 0)
@@ -91,6 +92,15 @@ def test_pdf_is_a_valid_document_even_with_gaps_in_the_series() -> None:
     assert _page_count(pdf) == 1
 
 
+def test_pdf_is_still_created_when_the_chart_image_cannot_be_rendered(monkeypatch) -> None:
+    def no_browser_engine(chart):
+        raise RuntimeError("Kaleido cannot start")
+
+    monkeypatch.setattr(pdf_module, "figure_png", no_browser_engine)
+    pdf = build_pdf(_chart())
+    assert pdf.startswith(b"%PDF") and pdf.rstrip().endswith(b"%%EOF")
+
+
 def test_pdf_without_any_value_does_not_fail() -> None:
     assert build_pdf(_chart(series={"A": [None] * 4})).startswith(b"%PDF")
 
@@ -134,7 +144,17 @@ def test_trend_export_uses_the_dashboard_data(rki_db) -> None:
     assert group.items[0].sub == "2026-W39 · je 100.000 Einw."  # every incidence shows its unit
     assert group.items[2].tone in {"up", "down", "flat"}
     assert chart.insight.startswith("Einordnung:")
-    assert "Testdatei" in chart.source_note and "CC BY 4.0" in chart.source_note
+    assert "Datenstand: 2026-W39" in chart.source_note and "CC BY 4.0" in chart.source_note  # whatever the last ETL was
+
+
+def test_report_names_the_data_source_of_the_last_import() -> None:
+    data = {"region": "Bayern", "region_display_name": "Bayern", "age_group": "00+", "age_group_display_name": "Alle",
+            "period": "month", "period_label": "Letzter Monat", "weeks": 0, "from_week": None, "to_week": None,
+            "latest_week": None, "latest_value": None, "previous_value": None, "change_percent": None, "series": []}
+    live = trend_export(data, {"latest_week": "2026-W39", "last_etl": {"source_type": "RKI_LIVE"}}, NOW)
+    test = trend_export(data, {"latest_week": "2026-W39", "last_etl": {"source_type": "LOCAL_TEST"}}, NOW)
+    assert "Datenquelle im Monitor: RKI LIVE" in live.source_note
+    assert "Datenquelle im Monitor: Testdatei" in test.source_note
 
 
 def test_year_export_lists_the_years_a_reference_line_and_a_summary(rki_db) -> None:

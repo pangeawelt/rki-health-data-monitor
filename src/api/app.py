@@ -18,7 +18,7 @@ from src.core.config import settings
 from src.core.logging_config import configure_logging
 from src.core.periods import DEFAULT_PERIOD, PERIODS
 from src.db.connection import init_database
-from src.etl.pipeline import run_etl
+from src.etl.pipeline import import_if_empty, run_etl
 from src.services.analytics import (
     get_age_groups,
     get_coverage,
@@ -43,6 +43,8 @@ ExportFormat = Literal["xlsx", "pdf"]
 async def lifespan(app: FastAPI):
     configure_logging()
     init_database()
+    if settings.auto_import_if_empty:
+        import_if_empty()
     yield
 
 

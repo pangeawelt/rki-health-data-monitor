@@ -8,7 +8,7 @@ from sqlalchemy import select
 from src.core.config import PROJECT_ROOT, settings
 from src.core.constants import SOURCE_TYPE_LIVE, SOURCE_TYPE_LOCAL_TEST
 from src.db.connection import SessionLocal, init_database
-from src.db.models import EtlRun
+from src.db.models import AreIncidence, EtlRun
 from src.db.seed import seed_age_groups
 from src.etl.extract import download_rki_data, load_local_tsv
 from src.etl.load import upsert_dimensions, upsert_fact_rows
@@ -107,6 +107,19 @@ def run_etl(force: bool = False, local_file: Path | None = None) -> dict:
                 run.error_message = str(exc)[:4000]
                 session.commit()
         raise
+
+
+def import_if_empty() -> dict | None:
+    """Download the RKI file when the database has no data yet (first start). Never raises."""
+    with SessionLocal() as session:
+        if session.scalar(select(AreIncidence.incidence_id).limit(1)) is not None:
+            return None
+    logger.info("Database is empty - importing the current RKI data")
+    try:
+        return run_etl(force=True)
+    except Exception:  # no internet or RKI unreachable: the dashboard still offers the manual import button
+        logger.warning("Automatic import failed; use 'Aktuelle RKI-Daten laden' in the dashboard", exc_info=True)
+        return None
 
 
 def _result_dict(run: EtlRun) -> dict:

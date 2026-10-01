@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     )
     # Offline copy of the RKI repository page (README, licence, metadata) for the "RKI-Quelle" page.
     source_copy_dir: str = "./data/quelle/ARE-Konsultationsinzidenz"
+    # Hosting: the dashboard starts the API in its own process if none answers at API_BASE_URL (a local address),
+    # and an empty database is filled from the RKI source on API start. Both help on hosts that run only Streamlit.
+    embedded_api: bool = True
+    auto_import_if_empty: bool = True
     http_timeout_seconds: int = Field(default=60, ge=5, le=300)
     log_level: str = "INFO"
 
